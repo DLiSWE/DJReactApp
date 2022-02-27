@@ -1,0 +1,7 @@
+/djrenv/*
+*settings.py
+**/__pycache__/*
+**/migrations/*
+*manage.py
+*.jpg
+
