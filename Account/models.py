@@ -5,6 +5,7 @@ from PIL import Image
 # Create your models here.
 class EndUser(AbstractUser,PermissionsMixin):
     #username, email, password1,password2
+    phone = models.CharField(blank=True,null=True, max_length=15)
     urls = models.URLField(blank=True,null=True)
     avatar = models.ImageField(default='profile_pics/default_profile.jpg', upload_to='static/profile_pics/')
     bio = models.TextField(blank=True,null=True)

@@ -6,7 +6,7 @@ from django.conf import settings
 
 class UserForm(UserCreationForm):
     class Meta:
-        fields = ('first_name','last_name','email','Phone/Mobile Number' 'password1', 'password2')
+        fields = ('first_name','last_name','email','phone', 'password1', 'password2')
         model = get_user_model()
 
 class SignupForm(UserForm):
