@@ -1,4 +1,4 @@
-djrenv/**
+djrvenv/**
 **/__pycache__/*
 **/migrations/*
 /node_modules/**
