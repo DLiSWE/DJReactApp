@@ -1,8 +1,9 @@
-/djrenv/**
-*settings.py
+djrenv/**
 **/__pycache__/*
 **/migrations/*
 /node_modules/**
 *manage.py
 *.jpg
 *.json
+*__init__.py
+*test.py
