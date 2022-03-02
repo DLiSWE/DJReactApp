@@ -1,8 +1,8 @@
-/djrenv/**
-*settings.py
-**/__pycache__/*
-**/migrations/*
-/node_modules/**
-*manage.py
-*.jpg
-*.json
+# /djrenv/**
+# *settings.py
+# **/__pycache__/*
+# **/migrations/*
+# /node_modules/**
+# *manage.py
+# *.jpg
+# *.json
