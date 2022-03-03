@@ -1,16 +1,12 @@
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-const port = process.env.PORT || 3000;
+const path = require("path");
 
 module.exports = {
-  mode: 'development',  
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, "./static/frontend"),
-    filename: 'bundle.[hash].js'
+    filename: '[name].js'
   },
-  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -40,15 +36,11 @@ module.exports = {
     minimize: true,
 },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: 'public/index.html',
-      favicon: 'public/favicon.ico'
-    })
+    new webpack.DefinePlugin({
+      "process.env": {
+        //this affects react lib size
+        NODE_ENV: JSON.stringify("development"),
+      },
+    }),
   ],
-  devServer: {
-    host: 'localhost',
-    port: port,
-    historyApiFallback: true,
-    open: true
-  }
 };

@@ -24,11 +24,13 @@ class EditForm(UserForm):
         self.fields['first_name'].label = 'First Name'
         self.fields['last_name'].label = 'Last Name'
         self.fields['email'].label = 'Change Email Address'
+        self.fields['phone'].label = 'Phone Number'
 
 class ProfileUpdateForm(UserForm):
-    avatar = forms.ImageField()
+    avatar = forms.ImageField(max_length=300)
     urls = forms.URLField()
     bio = forms.CharField()
+    phone = forms.CharField(max_length=15)
 
     class Meta:
         model = get_user_model()

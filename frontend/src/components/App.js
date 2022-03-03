@@ -1,15 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import { Button } from 'reactstrap';
+import React, { Component } from "react";
+import { render } from "react-dom";
+import { Button } from "bootstrap";
+// import { Button } from 'reactstrap';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-          <p>Something</p>
-      </header>
-    </div>
-  );
-}
+export default class App extends Component {
+    constructor(props) {
+      super(props);
+    }
 
-export default App;
+    render() {
+      return <Button className="btn btn-info">A button</Button>
+    }
+  }
+
+  const appDiv = document.getElementById("app");
+  render(<App />, appDiv);

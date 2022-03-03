@@ -87,7 +87,6 @@ REST_FRAMEWORK = {
     ]
 }
 
-
 WSGI_APPLICATION = 'stat_collector.wsgi.application'
 
 
@@ -140,7 +139,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'frontend/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR,STATIC_URL)]
 
 #Media files
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
