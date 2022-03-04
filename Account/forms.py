@@ -6,7 +6,7 @@ from django.conf import settings
 
 class UserForm(UserCreationForm):
     class Meta:
-        fields = ('first_name','last_name','email','phone', 'password1', 'password2')
+        fields = ('first_name','last_name','username','email','phone', 'password1', 'password2')
         model = get_user_model()
 
 class SignupForm(UserForm):
@@ -15,6 +15,7 @@ class SignupForm(UserForm):
         super().__init__(*args,**kwargs)
         self.fields['first_name'].label = 'First Name'
         self.fields['last_name'].label = 'Last Name'
+        self.fields['username'].label = 'Username'
         self.fields['email'].label = 'Email Address'
     
 class EditForm(UserForm):

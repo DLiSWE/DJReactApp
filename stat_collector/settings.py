@@ -29,9 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
-]
 
 # Application definition
 INSTALLED_APPS = [
@@ -41,15 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
-    'rest_framework',
     'PIL',
-    'Account.apps.AccountConfig',
-    'frontend.apps.FrontendConfig',
+    'Account',
+    'django_bootstrap5',
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -60,8 +54,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'stat_collector.urls'
-
-
 
 TEMPLATES = [
     {
@@ -79,16 +71,7 @@ TEMPLATES = [
     },
 ]
 
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
-
 WSGI_APPLICATION = 'stat_collector.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
@@ -138,8 +121,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'frontend/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR,STATIC_URL)]
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
 #Media files
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
@@ -150,3 +133,4 @@ MEDIA_URL= '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOGIN_REDIRECT_URL = 'home'

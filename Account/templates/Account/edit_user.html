@@ -1,0 +1,14 @@
+{% extends "Account/profile_base.html" %}
+{% load static %} 
+{% load django_bootstrap5 %}
+
+{% block pcontent %}
+<div class = "container">
+    <h1>Account Settings</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" class="btn btn-success" value="Edit">
+    </form>
+</div>
+{% endblock %}

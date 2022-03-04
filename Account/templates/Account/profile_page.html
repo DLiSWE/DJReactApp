@@ -1,0 +1,52 @@
+{% extends "Account/profile_base.html" %}
+{% load static %} 
+
+{% block pcontent %}
+<div class = "col-md-4">
+    <h1>{{ user.username }}</h1>
+    <img class="rounded-circle account-img" src={{ user.avatar.url }}>
+    <h6><a href="{{user.urls}}">{{ user.urls }}</a></h6>
+    <p class='text-start'>{{ user.bio }}</p>
+<button class='btn btn-info'><a href="{% url 'Accounts:editprof' request.user.pk %}">Edit Profile</a></button>
+</div>
+{% comment %} posts/_post.html {% endcomment %}
+{% endblock %}
+
+{% block profile_content %}
+    <div class="col-md-8 ms-auto">
+        <div class="list-group">
+            <p>In Groups:</p>
+            {% for membergroup in object.user_groups.all %}
+            <a class='list-group-item list-group-item-action list-group-item-dark border' href="{% url 'Groups:single' membergroup.group.slug %}">
+                <h3 class='title list-group-item-heading'>{{membergroup.group.name}}</h3>
+                <div class="list-group-item-text container-fluid">
+                    {% comment %} Using pipe will allow user text to look like what its supposed to{% endcomment %}
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span class='badge rounded-pill bg-danger'>{{membergroup.group.members.count}}</span>
+                            member{{membergroup.group.members.count|pluralize}}
+                        </div>
+                        <div class="col-md-4">
+                            <span class='badge rounded-pill bg-danger'>{{membergroup.group.postin.count}}</span>
+                            post{{membergroup.group.postin.count|pluralize}}
+                        </div>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="col-md-8 ms-auto">
+        <div class="list-group">
+            <p> Post History</p>
+            {% for inpost in object.poster.all %}
+            <a class="list-group-item list-group-item-action list-group-item bg-black text-white border">
+                <h6 class='list-group-item-heading'>{{inpost}}</h6>
+                <div class="list-group-item-text container-fluid">
+                    <h6><time>at {{inpost.created_at}}</time>
+                    <p>in {{inpost.group}}</p></h6>
+                </div>
+            </a>
+        {% endfor %}
+{% endblock %}
+    </div>

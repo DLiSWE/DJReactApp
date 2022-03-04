@@ -1,9 +1,9 @@
-from django.contrib.auth.models import AbstractUser, PermissionsMixin
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 from PIL import Image
 
 # Create your models here.
-class EndUser(AbstractUser,PermissionsMixin):
+class EndUser(AbstractUser):
     #username, email, password1,password2
     phone = models.CharField(blank=True,null=True, max_length=15)
     urls = models.URLField(blank=True,null=True)
