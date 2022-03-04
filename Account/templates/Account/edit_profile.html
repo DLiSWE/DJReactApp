@@ -3,16 +3,15 @@
 {% load django_bootstrap5 %}
 
 {% block content %}
-<div class="col-4">
-<div class = "card profile">
-        <img class="card-img-top" src="{{user.avatar.url}}">
-        <p class="card-text">@{{user.username}}</p>
-        <p class="card-text">{{user.bio}}</p>
+<div class = "profile">
+    <img class="profimg" src="{{user.avatar.url}}">
+    <p class="profdesc">{{user.username}}</p>
+    <p class="profdesc">{{user.bio}}</p>
 </div>
-</div>   
-<div class = "container">
+
+<div class="mycontent">
     <h2>Edit</h2>
-    <p style="color:red"><strong><i>Changing your profile will log out you</i></strong></p>
+    <p style="color:red"><strong><i>Editing your profile will log you out</i></strong></p>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {% bootstrap_form form %}
