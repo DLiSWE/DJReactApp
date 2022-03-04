@@ -48,7 +48,7 @@ body{
   font-weight:bold;
   font-family:'Sansita Swashed' !important;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #9154e0;
+  -webkit-text-stroke-color: #5dadec;
 }
 .navbar-brand:hover{
   color:#9154e0;
@@ -89,8 +89,8 @@ body{
   display:flex;
   justify-content: center;
   background-color: #F6EBF4;
-  border:1px #9154e0 solid;
-  box-shadow:3px 3px 6px #482673;
+  border:1px #5dadec solid;
+  box-shadow:30px 30px 60px #5dadec;
   border-radius:10px;
   max-width:50%;
 }
