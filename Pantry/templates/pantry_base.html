@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %} 
+
+{% block content %}
+<div class="pantry">
+        {% block ingredients %}{% endblock %}
+        {% block pantry %}{% endblock %}
+        {% block postpantry %} {% endblock %}
+</div>
+
+{% endblock %}

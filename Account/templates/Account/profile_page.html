@@ -2,11 +2,11 @@
 {% load static %} 
 
 {% block content %}
-<div class="">
-    <h1>{{ user.first_name }} {{user.last_name}}</h1>
+<div class="profile_page">
+    <h1>{{ user.first_name|capfirst }} {{user.last_name|capfirst }}</h1>
     <img class="" src={{ user.avatar.url }}>
-    <h6><a href="{{user.urls}}">{{ user.urls }}</a></h6>
-    <p class=''>{{ user.bio }}</p>
+    <h6><a href="{{user.urls}}">{{ user.urls|default_if_none:" " }}</a></h6>
+    <p class=''>{{ user.bio|capfirst|default_if_none:" " }}</p>
     <a href="{% url 'Account:editprof' request.user.pk %}"><button class='btn btn-dark'>Edit Profile</button></a>
 </div>
 {% endblock %}

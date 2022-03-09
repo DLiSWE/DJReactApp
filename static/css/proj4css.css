@@ -4,7 +4,7 @@ html{
 
 body{
   background:#ffffff;
-  color:#7d3fce;
+  color:#000000;
   font-family:'Noto Sans'
 }
 
@@ -37,27 +37,27 @@ body{
 .toggle{
   font-size:2rem;
   padding-top:0px;
-  color: #482673;
+  color: #000000;
 }
 
 /* topright brand */
 .navbar-brand {
-  color:#482673;
-  text-shadow:2px 2px 3px #9154e0;
+  color:#000000;
+  text-shadow:2px 2px 3px #fdff74;
   font-size:3rem;
   font-weight:bold;
   font-family:'Sansita Swashed' !important;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #5dadec;
+  -webkit-text-stroke-color: #ffffff;
 }
 .navbar-brand:hover{
-  color:#9154e0;
-  text-shadow:2px 2px 3px #9154e0;
-  text-decoration: solid underline #482673 2px !important;
+  color:#fdff74;
+  text-shadow:2px 2px 3px #000000;
+  text-decoration: solid underline #000000 2px !important;
   font-weight:bold;
   font-family:'Sansita Swashed' !important;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #8453c4;
+  -webkit-text-stroke-color: #000000;
 }
 
 .nav-item{
@@ -65,22 +65,24 @@ body{
 }
 
 .nav-link{
-  color:#482673;
+  color:#000000;
   border-radius:5px;
   display:flex;
   justify-content: center;
   font-size:1.25rem;
   margin-top:3px;
-  text-shadow: 1px 1px 3px #9154e0;
+  text-shadow: 1px 1px 3px #ffffff;
 }
 
 .nav-link:hover{
-  background-color:#9154e0;
-  color:white !important;
+  background-color:#ffffff;
+  color:#dee054 !important;
   border-radius:5px;
-  text-shadow: 2px 2px 4px black;
-  border:1px solid #7d3fce;
-  box-shadow:1px 1px 3px #9154e0;
+  text-shadow: 2px 2px 4px #dee054;
+  border:1px solid #020202;
+  box-shadow:1px 1px 3px #000000;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000000;
 }
 
 /* main container */
@@ -90,8 +92,8 @@ body{
   flex-direction:column;
   justify-content: center;
   background-color: #F6EBF4;
-  border:1px #5dadec solid;
-  box-shadow:30px 30px 60px #5dadec;
+  border:1px #000000 solid;
+  box-shadow:30px 30px 60px #363636;
   border-radius:10px;
   max-width:70%;
 }
@@ -110,10 +112,22 @@ body{
   margin-left:25%;
   margin-top:1%;
   text-align:center;
-  border-radius:10px;
-  box-shadow:10px 10px 20px #5dadec;
 }
 
 .profile img{
   border-radius:10px;
+}
+
+/* profile page */
+.profile_page {
+  display:flex;
+  flex-direction:column;
+  width:50%;
+  margin-left: 25%;
+  margin-top:5%;
+  padding:5%;
+}
+
+.profile_page img{
+  border-radius:100%;
 }

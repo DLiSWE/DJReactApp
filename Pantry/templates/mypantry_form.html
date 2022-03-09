@@ -1,0 +1,13 @@
+{% extends "pantry_base.html" %}
+{% load static %} 
+{% load django_bootstrap5 %}
+
+{% block content %}
+<h4> Create New Pantry</h4>
+<form action="{% url 'Pantry:create' request.user.pk %}" method="POST" id="pantryForm" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" class="btn btn-fill btn-info me-2" value="Create">
+</form>
+
+{% endblock %}

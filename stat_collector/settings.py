@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'PIL',
     'Account',
     'django_bootstrap5',
+    'Pantry',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,18 @@
+{% extends 'pantry_base.html' %}
+{% load static %} 
+
+{% block content %}
+
+    <h2>Add ingredients to pantry</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+          {{ form.as_table }}
+        </table>
+        <button type="submit">Save</button>
+      </form>
+    {% comment %} {% for ingredient in object_list %}
+        {{ ingredient }}
+    {% endfor %} {% endcomment %}
+
+{% endblock %}

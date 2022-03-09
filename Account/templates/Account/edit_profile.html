@@ -5,8 +5,8 @@
 {% block content %}
 <div class = "profile">
     <img class="profimg" src="{{user.avatar.url}}">
-    <p class="profdesc">{{user.username}}</p>
-    <p class="profdesc">{{user.bio}}</p>
+    <p class="profdesc">{{user.first_name|capfirst }} {{user.last_name|capfirst}}</p>
+    <p class="profdesc">{{user.bio|capfirst|default_if_none:""}}</p>
 </div>
 
 <div class="mycontent">
