@@ -1,0 +1,18 @@
+{% extends 'pantry_base.html' %}
+{% block pantry %}
+    {% if pantryList.count > 1%}
+    <h2>My Pantries</h2>
+    {% else %}
+    <h2>My Pantry</h2>
+    {% endif %}
+{% comment %} {% url 'thepantry:single' slug=name.id %} {% endcomment %}
+    {% for name in pantryList%}
+    <a class='pantryitems' href="{% url 'thepantry:single' pk=name.pk %}"><div class='pantrylistitem'><p class='pantrylistname'>{{name}}<p></div></a>
+    {% endfor %}
+
+    <a class = 'btn btn-md btn-fill btn-dark' href={% url 'thepantry:ingredients' request.user.pk %}>Add item to pantry</a>
+{% endblock %}
+
+
+{% block postpantry %}
+{% endblock %}

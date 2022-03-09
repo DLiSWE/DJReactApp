@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'PIL',
     'Account',
     'django_bootstrap5',
-    'Pantry',
+    'thepantry',
     'django_extensions',
 ]
 

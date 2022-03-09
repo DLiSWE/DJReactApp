@@ -1,7 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from PIL import Image
-from Pantry.models import myPantry
 
 # Create your models here.
 class EndUser(AbstractUser):

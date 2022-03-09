@@ -1,8 +1,8 @@
 from django.contrib import admin
 from . import models
 # Register your models here.
-class PantryAdmin(admin.ModelAdmin):
+class ThepantryAdmin(admin.ModelAdmin):
     search_fields = ['item']
 
 
-admin.site.register(models.myPantry, PantryAdmin)
+admin.site.register(models.myPantry, ThepantryAdmin)

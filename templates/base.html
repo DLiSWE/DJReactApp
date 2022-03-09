@@ -32,9 +32,9 @@
             <div class="collapse navbar-collapse align-text-center" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 {% if user.is_authenticated %}
-                
-                <li class="nav-item"><a class="nav-link" href={% url 'Pantry:pantry_list'%}>Add To Pantry</a></li>
-                <li class="nav-item"><a class="nav-link" href={% url 'Pantry:create' request.user.pk%}>Create Pantry</a></li>
+                <li class="nav-item"><a class="nav-link" href={% url 'thepantry:pantry_list'%}>Recipe</a></li>
+                <li class="nav-item"><a class="nav-link" href={% url 'thepantry:pantry_list'%}>My Pantry</a></li>
+                <li class="nav-item"><a class="nav-link" href={% url 'thepantry:create' request.user.pk%}>Create Pantry</a></li>
                 <li class="nav-item"><a class="nav-link" href={% url 'Account:logout' %}><span class="bi bi-door-closed-fill">Log Out</span></a></li>
                 <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'edituser' %}active{% endif %}" href={% url 'Account:editprof' request.user.pk%}><span class="bi bi-gear-fill"></span></a></li>
                 <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'profileview' %}active{% endif %}" href={% url 'Account:profileview' request.user.pk%}><span class="bi bi-person-lines-fill"></span></a></li>

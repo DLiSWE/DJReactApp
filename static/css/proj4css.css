@@ -131,3 +131,31 @@ body{
 .profile_page img{
   border-radius:100%;
 }
+
+/* pantry css */
+.pantryitems{
+  text-decoration: none;
+}
+
+
+.pantryitems .pantrylistitem {
+  display:flex;
+  flex-direction: column;
+  border:1px black solid;
+  padding:25px;
+  margin-bottom:2%;
+  justify-content: center;
+  border-radius:20px;
+  background-color: white;
+}
+
+.pantryitems .pantrylistitem:hover {
+  background-color:#8f8f8f;
+  color:white;
+}
+
+.pantrylistitem .pantrylistname {
+  color:black;
+  text-align:center;
+  margin-bottom:-2%;
+}
