@@ -7,7 +7,7 @@
 <form action="{% url 'thepantry:create' request.user.pk %}" method="POST" id="pantryForm" enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}
-    <input type="submit" class="btn btn-fill btn-info me-2" value="Create">
+    <input type="submit" class="btn btn-fill btn-dark me-2" value="Create">
 </form>
 
 {% endblock %}

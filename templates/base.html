@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse align-text-center" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link" href={% url 'thepantry:pantry_list'%}>Recipe</a></li>
+                <li class="nav-item"><a class="nav-link" href={% url 'thepantry:all'%}>Explore</a></li>
                 <li class="nav-item"><a class="nav-link" href={% url 'thepantry:pantry_list'%}>My Pantry</a></li>
                 <li class="nav-item"><a class="nav-link" href={% url 'thepantry:create' request.user.pk%}>Create Pantry</a></li>
                 <li class="nav-item"><a class="nav-link" href={% url 'Account:logout' %}><span class="bi bi-door-closed-fill">Log Out</span></a></li>

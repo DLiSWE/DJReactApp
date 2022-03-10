@@ -1,10 +1,8 @@
-from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy, reverse
 from django.views.generic import DetailView, ListView, DeleteView
-from django.views.generic.edit import CreateView, UpdateView, FormView
-# from .forms import SignupForm, EditForm, ProfileUpdateForm
-from django.http import Http404, HttpResponseRedirect
+from django.views.generic.edit import CreateView, UpdateView
+from django.http import HttpResponseRedirect
 from thepantry.forms import addToPantry, PantryForm
 from . import models
 from thepantry.models import Ingredients, myPantry, PantryModel
@@ -27,7 +25,17 @@ class my_Pantry(ListView,LoginRequiredMixin):
 
     def get_context_data(self,**kwargs):
         context = super(my_Pantry, self).get_context_data(**kwargs)
-        context['fields'] = [field.name for field in models.PantryModel._meta.get_fields()]
+        context.update(item_name = myPantry.objects.all())
+        return context
+
+class AllPantry(ListView,LoginRequiredMixin):
+    model = models.PantryModel
+    template_name = 'pantry_explore.html'
+    context_object_name = 'pantryList'
+
+    def get_context_data(self,**kwargs):
+        context = super(AllPantry, self).get_context_data(**kwargs)
+        context.update(item_name = myPantry.objects.all())
         return context
 
 class ingredientFormView(CreateView, LoginRequiredMixin):

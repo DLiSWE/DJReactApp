@@ -8,7 +8,7 @@ from thepantry.models import PantryModel
 app_name = 'thepantry'
 
 urlpatterns = [
-    # path('ingredients/', views.AllIngredients.as_view(), name='ingredients'),
+    path('explore', views.AllPantry.as_view(), name='all'),
     path('', views.my_Pantry.as_view(), name='pantry_list'),
     path('add/<int:pk>', views.ingredientFormView.as_view(),name='ingredients'),
     path('create/<int:pk>', views.CreatePantry.as_view(),name='create'),

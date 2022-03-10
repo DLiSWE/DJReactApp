@@ -17,8 +17,7 @@ console.log(recipes);
 to_html(data);
 return [data];
 })
-    // to_html(data[0])
-    
+
 function to_html(data){
     for (let i=0;i<data.length;i++){
         let food = document.createElement("div",{"id":`p${i}`});
@@ -30,12 +29,8 @@ function to_html(data){
         for (let x=0;x<misslen;x++){
             console.log(x);
         let missedIngred = document.createElement("div",{"id":`p${i}`});
-        missedIngred.innerHTML =`<p>${data[i].missedIngredients[x].original}</p>`;
+        missedIngred.innerHTML =`<p>${data[i].missedIngredients[x].originalName}</p>`;
         document.body.appendChild(missedIngred);
     }
-        // let missed = document.createElement("div",{"id":`p${i}`})
-        // food.innerHTML = `<p>${data[i].missedIngredients.name}</p>`
-
-        // document.body.appendChild(missedIngred)
     }
 }

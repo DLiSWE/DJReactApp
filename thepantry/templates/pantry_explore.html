@@ -1,12 +1,10 @@
-{% extends 'pantry_base.html' %}
+{% extends "pantry_base.html" %}
+{% load static %}
+{% load django_bootstrap5 %}
+
 {% block pantry %}
-    {% if pantryList.count > 1%}
-    <h2>My Pantries</h2>
-    {% else %}
-    <h2>My Pantry</h2>
-    {% endif %}
-    {% for name in pantryList %}
-    {% if name.user_id == request.user.pk %}
+<h2>All Pantries</h2>
+{% for name in pantryList %}
     <div class='pantryitems' id='{{name}}'>
         <div class='pantrylistitem'>
             <div class="toprow">
@@ -24,12 +22,5 @@
                 <p class='pantrylistname'>{{name}}</p>
         </div>
     </div>
-    {% endif%}
-    {% endfor %}
-
-    <a class = 'btn btn-md btn-fill btn-dark' href={% url 'thepantry:ingredients' request.user.pk %}>Add item to pantry</a>
-{% endblock %}
-
-
-{% block postpantry %}
+{%endfor%}
 {% endblock %}
