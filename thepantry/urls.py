@@ -13,6 +13,7 @@ urlpatterns = [
     path('add/<int:pk>', views.ingredientFormView.as_view(),name='ingredients'),
     path('create/<int:pk>', views.CreatePantry.as_view(),name='create'),
     path('delete/<int:pk>/', views.DeletePantry.as_view(), name='pantry_delete'),
+    path('ingredient/delete/<int:pk>/', views.DeleteIngredient.as_view(), name='ingredient_delete'),
     path('view/<str:slug>/', views.PantryDetails.as_view(), name='single'),
 ]  
 

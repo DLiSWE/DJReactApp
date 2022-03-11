@@ -43,13 +43,37 @@ button:hover{
   border-radius:20px;
   align-self: center;
   margin-bottom:1%;
-
 }
 
 .deletep:hover{
   color:white;
   background-color:#b3135d;
   box-shadow: inset -1px -1px 5px #e5a1e7b0, inset 1px 1px 3px rgb(36, 9, 44);
+}
+
+.deletei{
+  display:flex;
+  position:absolute;
+  background-color:#d8096a;
+  top:0;
+  right:0;
+  box-shadow: -1px -1px 2px #e2a3ffaf, 1px 1px 3px rgb(36, 9, 44);
+  text-shadow: inset -2px -2px 5px #f7a6fab0, inset 2px 2px 5px rgb(36, 9, 44);
+  text-decoration: none;
+  justify-content:center;
+  color:white;
+  width:25px;
+  height:25px;
+  text-align:center;
+  border-radius:50%;
+  align-self: center;
+  margin-bottom:1%;
+}
+
+.deletei:hover{
+  color:white;
+  background-color:#b3135d;
+  box-shadow: inset -1px -1px 3px #e5a1e7b0, inset 1px 1px 3px rgb(36, 9, 44);
 }
 
 /* navbar */
@@ -156,7 +180,7 @@ button:hover{
 }
 
 .contenttitle:hover{
-  animation: flicker 1.25s linear infinite;
+  animation: flicker 1.25s linear 1;
 }
 
 
@@ -290,6 +314,7 @@ button:hover{
   justify-content:center;
   color:white;
   text-shadow:2px 2px 4px #fdff74;
+  position:relative;
   display:flex;
   flex-direction:row;
   flex-wrap:wrap;
@@ -309,7 +334,7 @@ button:hover{
 }
 
 .ingred_name:hover{
-    animation: flicker 1.5s linear infinite;
+    animation: flicker 1.5s linear 1;
   }
 
 
@@ -328,7 +353,7 @@ button:hover{
 }
 
 .pantrylistname:hover{
-  animation: flicker 2s linear infinite;
+  animation: flicker 2s linear 1;
 }
 
 .recipe{

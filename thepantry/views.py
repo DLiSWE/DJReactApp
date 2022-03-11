@@ -97,6 +97,16 @@ class DeletePantry(DeleteView, LoginRequiredMixin):
         queryset = super().get_queryset()
         return queryset.filter(user_id = self.request.user.id)
 
+
+class DeleteIngredient(DeleteView, LoginRequiredMixin):
+    model = MyPantry
+    template_name = 'delete_ingredient.html'
+    success_url = reverse_lazy('thepantry:pantry_list')
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter(user_id = self.request.user.id)
+
     def delete(self,*args,**kwargs):
         messages.success(self.request,'Ingredient removed')
         return super().delete(*args,**kwargs)
