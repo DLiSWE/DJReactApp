@@ -13,22 +13,19 @@
             {% for object in item_name%}
                 {% if name|stringformat:"s" == object.pantry_name|stringformat:"s" %}
                     <div id="{{object.item_name}}" class="ingred_name" onclick="getRecipe('{{object.item_name}}')">{{object.item_name}}</div>
+                    {% comment %} <div class="recipe" id="recipe_for_{{object2.item_name}}"></div> {% endcomment %}
                 {% endif %}
             {% endfor %}
             </div> 
-            {% for object2 in item_name%}
-                {% if name|stringformat:"s" == object2.pantry_name|stringformat:"s" %}
-                    <div class="recipe" id="recipe_for_{{object2.item_name}}"></div>
-                {% endif %}
-            {% endfor %}
                 <p class='pantrylistname'>{{name}}</p>
                 <a class='deletep' href={% url 'thepantry:pantry_delete' name.pk%}>Delete Pantry</a>
         </div>
     </div>
     {% endif%}
     {% endfor %}
-
-    <a class = 'deletep' href={% url 'thepantry:ingredients' request.user.pk %}>Add item to pantry</a>
+    <div class="recipe" id="recipe_for_ingredient"></div>
+    <a class="deletep" href="">Return</a>
+    <a class='deletep' href={% url 'thepantry:ingredients' request.user.pk %}>Add item to pantry</a>
 {% endblock %}
 
 

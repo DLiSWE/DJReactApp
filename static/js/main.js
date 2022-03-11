@@ -31,7 +31,10 @@ async function getRecipe(Ingredients){
        }}
    )
    const data = await response.json();
-   console.log(data)
+   $(document).ready(function(){ 
+    $(".pantrylistitem").hide();
+   })
+
    to_html(data,Ingredients);
    return;
     } 
@@ -39,7 +42,7 @@ async function getRecipe(Ingredients){
 // title recipe/missing ing
 
 function to_html(data,ingredient){
-        let main = document.getElementById(`recipe_for_${ingredient}`);
+        let main = document.getElementById("recipe_for_ingredient");
         main.innerHTML = ' '
         main.innerHTML = `<h3>${ingredient} Recipes:</h3>`
         for (let i=0;i<data.length;i++){
