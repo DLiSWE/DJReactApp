@@ -3,13 +3,13 @@
 
 {% block content %}
 
-    <h2>Add ingredients to pantry</h2>
+    <h2 class='contenttitle'>Add ingredients to pantry</h2>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <table>
           {{ form.as_table }}
         </table>
-        <button class='btn btn-md btn-fill btn-dark' type="submit">Save</button>
+        <input class='deletep' type="submit" value='Save'>
       </form>
     {% comment %} {% for ingredient in object_list %}
         {{ ingredient }}

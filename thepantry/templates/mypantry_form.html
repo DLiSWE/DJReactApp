@@ -3,11 +3,11 @@
 {% load django_bootstrap5 %}
 
 {% block content %}
-<h4> Create New Pantry</h4>
+<h2 class='contenttitle'> Create New Pantry</h2>
 <form action="{% url 'thepantry:create' request.user.pk %}" method="POST" id="pantryForm" enctype="multipart/form-data">
     {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" class="btn btn-fill btn-dark me-2" value="Create">
+    {{form.as_table}}
+    <input type="submit" class="deletep" value="Create">
 </form>
 
 {% endblock %}

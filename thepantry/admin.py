@@ -5,4 +5,4 @@ class ThepantryAdmin(admin.ModelAdmin):
     search_fields = ['item']
 
 
-admin.site.register(models.myPantry, ThepantryAdmin)
+admin.site.register(models.MyPantry, ThepantryAdmin)

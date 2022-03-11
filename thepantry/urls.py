@@ -12,8 +12,8 @@ urlpatterns = [
     path('', views.my_Pantry.as_view(), name='pantry_list'),
     path('add/<int:pk>', views.ingredientFormView.as_view(),name='ingredients'),
     path('create/<int:pk>', views.CreatePantry.as_view(),name='create'),
-    path('delete/<int:pk>/', views.DeletePantry.as_view(), name='pantry_delete')
-    # path('ingredients/<int:pk>')
+    path('delete/<int:pk>/', views.DeletePantry.as_view(), name='pantry_delete'),
+    path('view/<str:slug>/', views.PantryDetails.as_view(), name='single'),
 ]  
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

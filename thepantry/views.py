@@ -5,7 +5,7 @@ from django.views.generic.edit import CreateView, UpdateView
 from django.http import HttpResponseRedirect
 from thepantry.forms import addToPantry, PantryForm
 from . import models
-from thepantry.models import Ingredients, myPantry, PantryModel
+from thepantry.models import Ingredients, MyPantry, PantryModel
 from django.utils.text import slugify
 from django.contrib import messages
 
@@ -26,7 +26,7 @@ class my_Pantry(ListView,LoginRequiredMixin):
 
     def get_context_data(self,**kwargs):
         context = super(my_Pantry, self).get_context_data(**kwargs)
-        context.update(item_name = myPantry.objects.all())
+        context.update(item_name = MyPantry.objects.all())
         return context
 
 class AllPantry(ListView,LoginRequiredMixin):
@@ -36,13 +36,19 @@ class AllPantry(ListView,LoginRequiredMixin):
 
     def get_context_data(self,**kwargs):
         context = super(AllPantry, self).get_context_data(**kwargs)
-        context.update(item_name = myPantry.objects.all())
+        context.update(item_name = MyPantry.objects.all())
         return context
 
 class ingredientFormView(CreateView, LoginRequiredMixin):
     template_name = 'ingredients.html'
     form_class = addToPantry
     success_url = reverse_lazy('thepantry:pantry_list')
+
+    def get_form_kwargs(self):
+        kwargs = super(ingredientFormView, self).get_form_kwargs()
+        if hasattr(self, 'object'):
+            kwargs.update({'request': self.request})
+        return kwargs
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
@@ -78,6 +84,9 @@ class CreatePantry(CreateView, LoginRequiredMixin):
         self.pantry.save()
         return super().form_valid(form)
 
+
+class PantryDetails(DetailView, LoginRequiredMixin):
+    model = MyPantry
 
 class DeletePantry(DeleteView, LoginRequiredMixin):
     model = PantryModel

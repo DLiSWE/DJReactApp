@@ -1,9 +1,9 @@
 {% extends 'pantry_base.html' %}
 {% block pantry %}
     {% if pantryList.count > 1%}
-    <h2>My Pantries</h2>
+    <h2 class='contenttitle'>My Pantries</h2>
     {% else %}
-    <h2>My Pantry</h2>
+    <h2 class='contenttitle'2>My Pantry</h2>
     {% endif %}
     {% for name in pantryList %}
     {% if name.user_id == request.user.pk %}
@@ -15,11 +15,6 @@
                     <div id="{{object.item_name}}" class="ingred_name" onclick="getRecipe('{{object.item_name}}')">{{object.item_name}}</div>
                 {% endif %}
             {% endfor %}
-            {% for item in item_name %}
-                {% if name|stringformat:"s" == object.pantry_name|stringformat:"s" %}
-                    <a onclick='showHide('{{item.item_name}}')'>Hide</a>
-                {% endif%}
-            {% endfor %}
             </div> 
             {% for object2 in item_name%}
                 {% if name|stringformat:"s" == object2.pantry_name|stringformat:"s" %}
@@ -27,12 +22,13 @@
                 {% endif %}
             {% endfor %}
                 <p class='pantrylistname'>{{name}}</p>
+                <a class='deletep' href={% url 'thepantry:pantry_delete' name.pk%}>Delete Pantry</a>
         </div>
     </div>
     {% endif%}
     {% endfor %}
 
-    <a class = 'btn btn-md btn-fill btn-dark' href={% url 'thepantry:ingredients' request.user.pk %}>Add item to pantry</a>
+    <a class = 'deletep' href={% url 'thepantry:ingredients' request.user.pk %}>Add item to pantry</a>
 {% endblock %}
 
 

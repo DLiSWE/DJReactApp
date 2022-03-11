@@ -26,7 +26,7 @@
         <div class="container-fluid">
             <img src={% static 'images/logo.png'%} width='50' id='hogo'/>
             <a class='navbar-brand' href="{% url 'home' %}"> The Pantry </a>
-            <button class="navbar-toggler toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler toggle blu3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class='toggle'>+</span>
             </button>
             <div class="collapse navbar-collapse align-text-center" id="navbarSupportedContent">
@@ -39,7 +39,6 @@
                         <li><a class="dropdown-item" href={% url 'thepantry:ingredients' request.user.pk%}>Add to Pantry</a></li>
                         <li><a class="dropdown-item" href={% url 'thepantry:pantry_list'%}>My pantry</a></li>
                         <li><a class="dropdown-item" href={% url 'thepantry:create' request.user.pk%}>Create Pantry</a></li>
-                        <li><a class="dropdown-item" href={% url 'thepantry:pantry_delete' request.user.pk%}>Delete Pantry</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown {% if request.resolver_match.namespace == 'Account' %}active{%endif%}">

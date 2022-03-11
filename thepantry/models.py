@@ -24,10 +24,7 @@ class PantryModel(models.Model):
     def __str__(self):
         return self.name
 
-    def get_absolute_url(self):
-        return reverse('Pantry:single',kwargs={'slug':self.slug})
-
-class myPantry(models.Model):
+class MyPantry(models.Model):
     pantry_id = models.ForeignKey(PantryModel,related_name='pname',on_delete=models.CASCADE, blank=True,null=True)
     pantry_name = models.TextField(null=True,blank=True)
     slug = models.TextField()
@@ -35,5 +32,10 @@ class myPantry(models.Model):
     item = models.ForeignKey(Ingredients,related_name='ingredientIn',on_delete = models.CASCADE, blank=True,null=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='user_pantry', on_delete = models.CASCADE,blank=True,null=True)
 
+    def __str__(self):
+        return self.pantry_name
+
+    def get_absolute_url(self):
+        return reverse('Pantry:single',kwargs={'slug':self.slug})
     # def save(self,*args,**kwargs):
     #     super().save(*args,**kwargs)

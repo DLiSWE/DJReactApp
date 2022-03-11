@@ -3,7 +3,12 @@
 
 {% block content %}
 <div>
-<h1 id='test'>Index</h1>
+<h1 class="contenttitle">Home Page</h1>
+{% if user.is_authenticated %}
+<p>Welcome back!</p>
+{%else%}
+<p>Login or signup now to get started.</p>
+{%endif%}
 </div>
 {% endblock %}
 
