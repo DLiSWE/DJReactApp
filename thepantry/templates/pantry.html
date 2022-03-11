@@ -15,11 +15,16 @@
                     <div id="{{object.item_name}}" class="ingred_name" onclick="getRecipe('{{object.item_name}}')">{{object.item_name}}</div>
                 {% endif %}
             {% endfor %}
+            {% for item in item_name %}
+                {% if name|stringformat:"s" == object.pantry_name|stringformat:"s" %}
+                    <a onclick='showHide('{{item.item_name}}')'>Hide</a>
+                {% endif%}
+            {% endfor %}
             </div> 
             {% for object2 in item_name%}
-            {% if name|stringformat:"s" == object2.pantry_name|stringformat:"s" %}
-                <div class="recipe" id="recipe_for_{{object2.item_name}}"></div>
-            {% endif %}
+                {% if name|stringformat:"s" == object2.pantry_name|stringformat:"s" %}
+                    <div class="recipe" id="recipe_for_{{object2.item_name}}"></div>
+                {% endif %}
             {% endfor %}
                 <p class='pantrylistname'>{{name}}</p>
         </div>

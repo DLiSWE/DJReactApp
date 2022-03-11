@@ -33,11 +33,23 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 {% if user.is_authenticated %}
                 <li class="nav-item"><a class="nav-link" href={% url 'thepantry:all'%}>Explore</a></li>
-                <li class="nav-item"><a class="nav-link" href={% url 'thepantry:pantry_list'%}>My Pantry</a></li>
-                <li class="nav-item"><a class="nav-link" href={% url 'thepantry:create' request.user.pk%}>Create Pantry</a></li>
-                <li class="nav-item"><a class="nav-link" href={% url 'Account:logout' %}><span class="bi bi-door-closed-fill">Log Out</span></a></li>
-                <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'edituser' %}active{% endif %}" href={% url 'Account:editprof' request.user.pk%}><span class="bi bi-gear-fill"></span></a></li>
-                <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'profileview' %}active{% endif %}" href={% url 'Account:profileview' request.user.pk%}><span class="bi bi-person-lines-fill"></span></a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#"id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Pantry</a>
+                    <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href={% url 'thepantry:ingredients' request.user.pk%}>Add to Pantry</a></li>
+                        <li><a class="dropdown-item" href={% url 'thepantry:pantry_list'%}>My pantry</a></li>
+                        <li><a class="dropdown-item" href={% url 'thepantry:create' request.user.pk%}>Create Pantry</a></li>
+                        <li><a class="dropdown-item" href={% url 'thepantry:pantry_delete' request.user.pk%}>Delete Pantry</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown {% if request.resolver_match.namespace == 'Account' %}active{%endif%}">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href={% url 'Account:profileview' request.user.pk%}>My Profile</a></li>
+                        <li><a class="dropdown-item" href={% url 'Account:editprof' request.user.pk%}><span class="bi bi-gear-fill"></span></a></li>
+                        <li><a class="dropdown-item" href={% url 'Account:logout' %}><span class="bi bi-door-closed-fill">Log Out</span></a></li>
+                    </ul>
+                </li>
                 {% else %}
                 <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'login' %}active{% endif %}" href={% url 'Account:login'%}><span class="bi bi-door-open-fill">Log In<span></a></li>
                 <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'signup' %}active{% endif %}" href="{% url 'Account:signup'%}"><span class="bi bi-person-plus-fill">Sign Up</span></a></li>

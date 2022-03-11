@@ -7,6 +7,7 @@ from thepantry.forms import addToPantry, PantryForm
 from . import models
 from thepantry.models import Ingredients, myPantry, PantryModel
 from django.utils.text import slugify
+from django.contrib import messages
 
 # Create your views here.
 class AllIngredients(ListView,LoginRequiredMixin):
@@ -78,6 +79,15 @@ class CreatePantry(CreateView, LoginRequiredMixin):
         return super().form_valid(form)
 
 
-class SinglePantryView(DetailView):
+class DeletePantry(DeleteView, LoginRequiredMixin):
     model = PantryModel
-    template_name = 'pantry_detail.html'
+    template_name = 'delete_pantry.html'
+    success_url = reverse_lazy('thepantry:pantry_list')
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter(user_id = self.request.user.id)
+
+    def delete(self,*args,**kwargs):
+        messages.success(self.request,'Ingredient removed')
+        return super().delete(*args,**kwargs)

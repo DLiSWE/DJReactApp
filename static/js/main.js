@@ -11,9 +11,16 @@ $ingreds.hide();
 
 $(document).ready(function(){
     $(".pantrylistname").click(function(){
-      $(".toprow").slideToggle("slow");
+        $(".toprow").slideToggle("slow");
     });
-  });
+});
+
+function showHide(ingredients){
+    $(`#recipe_for_${ingredients}`).click(function(){
+        $(`#recipe_for_${ingredients}`).slideToggle("slow");
+    });
+};
+
 
 async function getRecipe(Ingredients){
     const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${Ingredients}&number=2&apiKey=4f67686c0fa74823907de359dd10cdfc`, {
