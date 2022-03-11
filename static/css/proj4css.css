@@ -42,6 +42,7 @@ button:hover{
   text-align:center;
   border-radius:20px;
   align-self: center;
+
 }
 
 .deletep:hover{
@@ -62,18 +63,6 @@ button:hover{
   animation: spinner 5s infinite linear;
   margin-right:3%;
 }
-
-@keyframes spinner {
-  0% {rotate:90deg}
-  15% {rotate:180deg}
-  30% {rotate:270deg}
-  45% {rotate:360deg}
-  60% {rotate:450deg}
-  75% {rotate:540deg}
-  90% {rotate:630deg}
-  100% {rotate:630deg}
-}
-
 
 /* burger on small screen */
 .toggle{
@@ -155,10 +144,14 @@ button:hover{
 .contenttitle{
   color:white;
   display:flex;
+  font-weight:bold;
+  font-size:3rem;
   justify-content:center;
-  text-shadow:5px 5px 10px #fdff74;
+  text-shadow:5px 5px 10px #dee054;
   margin-bottom:5%;
   margin-top:5%;
+  -webkit-text-stroke-width: 0.75px;
+  -webkit-text-stroke-color: #000000;
 }
 
 .contenttitle:hover{
@@ -173,17 +166,17 @@ button:hover{
   flex-direction:column;
   justify-content: center;
   background-color: #F6EBF4;
-  border:1px #000000 solid;
   box-shadow:30px 30px 60px #363636;
   border-radius:10px;
   max-width:70%;
   min-width: 375px;
 }
-
+/* main container2 */
 .mycontent {
   padding-bottom:100px !important;
   display:flex;
   flex-direction:column;
+  align-items:center;
   background-color: #6c57b9;
 }
 
@@ -191,14 +184,24 @@ button:hover{
 .profile {
   display:flex;
   flex-direction:column;
-  width:50%;
-  margin-left:25%;
-  margin-top:1%;
+  margin-top:40px;
+  width: 350px;
+  justify-content: center;
   text-align:center;
+  position:relative;
+
 }
 
-.profile img{
-  border-radius:10px;
+.profile .profviewedit {
+  width:150px;
+  height:150px;
+  top:15px;
+  position:absolute;
+  border:5px solid black;
+  align-self:center;
+  object-position:50% 5%;
+  border-radius:50%;
+  box-shadow: -3px -3px 7px #ffffff50, 3px 3px 5px rgba(0, 0, 0, 0.288);
 }
 
 /* profile page */
@@ -206,16 +209,48 @@ button:hover{
   display:flex;
   flex-direction:column;
   width:50%;
-  margin-left: 25%;
+  justify-content: center;
+  text-align:center;
+  align-self: center;
   margin-top:5%;
   padding:5%;
 }
 
-.profile_page img{
-  border-radius:100%;
+.profilecard{
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content:center;
+  background-color:#3e298b;
+  margin-top:5%;
+  padding:20px;
+  border-radius:20px;
+  width: 300px;
+  box-shadow: inset -3px -3px 7px #ffffff50, inset 3px 3px 5px rgba(0, 0, 0, 0.288);
+}
+
+.profilecard .profimg{
+  width:150px;
+  height:150px;
+  object-fit:cover;
+  align-self:center;
+  object-position:50% 5%;
+  border-radius:50%;
+  box-shadow: -3px -3px 7px #ffffff50, 3px 3px 5px rgba(0, 0, 0, 0.288);
+}
+
+.profilecard p{
+  color:white;
 }
 
 /* pantry css */
+.pantry{
+  display:flex;
+  flex-direction:column;
+  min-width:50%;
+}
+
+
 .pantryitems{
   text-decoration: none;
 }
@@ -228,6 +263,7 @@ button:hover{
   border-radius:10px;
   padding-top:30px;
   padding-bottom:20px;
+
   background-color:#9158b3;
   text-decoration:none;
   box-shadow: -3px -3px 7px #cca1e6af, 3px 3px 5px rgba(63, 42, 80, 0.616);
@@ -261,7 +297,7 @@ button:hover{
   width:100px;
   min-width:100px;
   min-height:100px;
-  margin-bottom:5%;
+  margin:5%;
   border-radius:50%;
   box-shadow: -3px -3px 7px #cca1e6af, 3px 3px 5px rgba(87, 39, 83, 0.616);
   cursor:pointer
@@ -275,15 +311,13 @@ button:hover{
 .ingred_name:active{
   color:rgb(39, 23, 48);
   background-color:#6d37a0;
-  box-shadow: inset -3px -3px 7px #ffffff73,
-              inset 3px 3px 5px rgba(111, 94, 121, 0.288);
+  box-shadow: inset -3px -3px 7px #ffffff73, inset 3px 3px 5px rgba(111, 94, 121, 0.288);
 }
 
 .pantrylistitem .pantrylistname {
   color:rgb(255, 255, 255);
   text-align:center;
   font-size:3rem;
-  text-decoration:overline;
   text-shadow:3px 3px 10px #dee054;
   margin-top:2%;
 }
@@ -291,20 +325,6 @@ button:hover{
 .pantrylistname:hover{
   animation: flicker 2s linear infinite;
 }
-
-@keyframes flicker {
-  0% {color:white}
-  1% {color:#1b1b1b}
-  2% {color:white}
-  3% {color:#1b1b1b}
-  4% {color:white}
-  8% {color:#1b1b1b}
-  9% {color:white}
-  11% {color:#636363}
-  100% {color:white}
-}
-
-
 
 .recipe{
   display:flex;
@@ -320,5 +340,27 @@ button:hover{
   margin-top:1%;
 }
 
+/* flicker animation for headings */
+@keyframes flicker {
+  0% {color:white}
+  1% {color:#1b1b1b}
+  2% {color:white}
+  3% {color:#1b1b1b}
+  4% {color:white}
+  8% {color:#1b1b1b}
+  9% {color:white}
+  11% {color:#636363}
+  100% {color:white}
+}
 
-
+/* home logo animation */
+@keyframes spinner {
+  0% {rotate:90deg}
+  15% {rotate:180deg}
+  30% {rotate:270deg}
+  45% {rotate:360deg}
+  60% {rotate:450deg}
+  75% {rotate:540deg}
+  90% {rotate:630deg}
+  100% {rotate:630deg}
+}
