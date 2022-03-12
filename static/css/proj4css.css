@@ -376,11 +376,9 @@ button:hover{
   0% {color:white}
   1% {color:#1b1b1b}
   2% {color:white}
-  3% {color:#1b1b1b}
-  4% {color:white}
-  8% {color:#1b1b1b}
-  9% {color:white}
-  11% {color:#636363}
+  8% {color:#808080}
+  9% {color:rgb(2, 1, 1)}
+  10% {color:white}
   100% {color:white}
 }
 

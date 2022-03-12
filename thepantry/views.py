@@ -109,4 +109,5 @@ class DeleteIngredient(DeleteView, LoginRequiredMixin):
 
     def delete(self,*args,**kwargs):
         messages.success(self.request,'Ingredient removed')
-        return super().delete(*args,**kwargs)
+        return super(DeleteIngredient, self).delete(*args,**kwargs)
+        

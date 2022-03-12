@@ -12,10 +12,6 @@ class addToPantry(forms.ModelForm):
     def __init__(self, *args,**kwargs):
         request = kwargs.pop("request", None)
         user = request.user.id
-        find = MyPantry.objects.filter(user=user)
-        personal = find.values_list('user_id', flat=True).distinct()
-        mine = EndUser.objects.filter(id__in=personal)
-        print(mine)
         super().__init__(*args,**kwargs)
         if user is not None:
             self.fields['pantry_id'].queryset = PantryModel.objects.filter(user=user)
