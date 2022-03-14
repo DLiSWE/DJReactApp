@@ -41,7 +41,8 @@ button:hover{
   /* background-color:#d8096a; */
   background-image: url(/static/images/bluemetalbg.jpg);
   background-size: cover;
-  box-shadow: -1px -1px 3px #b0cbe0d2, 2px 2px 3px rgba(0, 0, 0, 0.932);
+  box-shadow: inset -2px -2px 2px #111010d2,
+  inset 2px 2px 2px rgba(160, 170, 179, 0.774);
   text-decoration: none;
   justify-content:center;
   color:white;
@@ -55,7 +56,10 @@ button:hover{
 
 .deletep:hover{
   color:white;
-  box-shadow: inset -1px -1px 4px rgba(174, 205, 231, 0.774), inset 3px 3px 6px rgba(0, 0, 0, 0.822);
+  /* background-color:#b3135d; */
+  /* opacity: 0.8; */
+  box-shadow: inset -1px -1px 2px rgba(160, 170, 179, 0.774),
+  inset 1px 1px 4px rgba(94, 104, 121, 0.822);
 }
 
 .deletei{
@@ -210,8 +214,8 @@ button:hover{
   display:flex;
   flex-direction:column;
   justify-content: center;
-  background-color: #f8f8f8;
-  box-shadow:20px 20px 40px #0000007e;
+  background-color: #F6EBF4;
+  box-shadow:30px 30px 60px #363636;
   border-radius:10px;
   max-width:70%;
   min-width: 375px;
@@ -222,6 +226,7 @@ button:hover{
   display:flex;
   flex-direction:column;
   align-items:center;
+  /* background-color: #6c57b9; */
   background-image: url(/static/images/metalbg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -426,8 +431,4 @@ backdrop-filter: blur(6.5px);
   75% {rotate:540deg}
   90% {rotate:630deg}
   100% {rotate:630deg}
-}
-
-.editacc{
-  
 }

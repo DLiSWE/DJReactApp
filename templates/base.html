@@ -24,7 +24,7 @@
 {% comment %} Nav bar under construction {% endcomment %}
     <nav class='navbar navbar-expand-md' role='navigation' id='navbar'>
         <div class="container-fluid">
-            <img src={% static 'images/logo.png'%} width='50' id='hogo'/>
+            <img src={% static 'images/LDlogo-nobg.png'%} width='50' id='hogo'/>
             <a class='navbar-brand' href="{% url 'home' %}"> The Pantry </a>
             <button class="navbar-toggler toggle blu3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class='toggle'>+</span>
@@ -66,9 +66,10 @@
 </body>
 
 <footer class="d-flex flex-wrap fixed-bottom justify-content-around align-items-center py-3 mt-3 mb-auto border-top bg-black text-white">
-<div class="col-md-4 d-flex align-items-center"><span>Derek's Site</span></div>
+<div class="col-md-4 d-flex align-items-center"><span>Derek's and Lukas' Site</span></div>
 <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
     <li class="ms-3"><a href="https://github.com/DLiSWE"><img src="{% static 'images/github_logo.jpg' %}"/></a></li>
+    <li class="ms-3"><a href="https://github.com/kineticstorytelling"><img src="{% static 'images/github_logo.jpg' %}"/></a></li>
     <li class="ms-3"><a href="#"><i class="bi bi-envelope-open-fill" style="font-size:23px;color:white;"></a></i></span></li>
 </ul>
 </footer>
