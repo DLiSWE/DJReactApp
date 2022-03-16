@@ -10,13 +10,14 @@
         <p class="profdesc">{{user.bio|capfirst|default_if_none:""}}</p>
 </div>
 
-<div class="mycontent">
-    <h2>Edit</h2>
-    <p style="color:red"><strong><i>Editing your profile will log you out</i></strong></p>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {% bootstrap_form form %}
-        <input type="submit" class="btn btn-success" value="Change">
-    </form>
+<div class="editprof">
+<h2>Edit</h2>
+<p>Minimum height for profile picture is 160px</p> 
+<p style="color:red"><strong><i>Editing your profile will log you out</i></strong></p>
+<form method="POST" class="editform" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input type="submit" class="deletep" value="Change">
+</form>
 </div>
 {% endblock %}

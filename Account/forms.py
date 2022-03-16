@@ -19,6 +19,7 @@ class SignupForm(UserForm):
         self.fields['email'].label = 'Email Address'
     
 class EditForm(UserForm):
+    success_url = 'Accounts:prof'
     
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)

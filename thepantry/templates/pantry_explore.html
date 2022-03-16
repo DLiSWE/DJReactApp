@@ -14,15 +14,10 @@
                 {% endif %}
             {% endfor %}
             </div> 
-            {% for object2 in item_name%}
-            {% if name|stringformat:"s" == object2.pantry_name|stringformat:"s" %}
-                <div class="recipe" id="recipe_for_{{object2.item_name}}"></div>
-            {% endif %}
-            {% endfor %}
                 <p class='pantrylistname'>{{name}}</p>
-                <div class="recipe" id="recipe_for_ingredient"></div>
-                <a class="deletep" href="">Return</a>
+            </div>
         </div>
-    </div>
-{%endfor%}
+            {% endfor %}
+            <div class="recipe" id="recipe_for_ingredient"></div>
+            <a class="deletep" href="">Return</a>
 {% endblock %}

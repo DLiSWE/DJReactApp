@@ -17,8 +17,7 @@ body p{
 button{
   width:10%;
   display:flex;
-  background-color:#d8096a !important;
-  box-shadow: -1px -1px 5px #cca1e6af, 1px 1px 3px rgba(87, 39, 83, 0.616);
+  box-shadow: -1px -1px 5px #e4e2e6af, 1px 1px 3px rgba(87, 39, 83, 0.616);
   text-decoration: none;
   justify-content:center;
   color:white;
@@ -30,7 +29,7 @@ button{
   
 button:hover{
   color:white;
-  background-color:#b3135d !important;
+  background-color:#740d0d !important;
   box-shadow: inset -1px -1px 5px #2e2d2d73, inset 1px 1px 3px rgba(111, 94, 121, 0.288);
 }
 
@@ -51,6 +50,7 @@ button:hover{
   border-radius:20px;
   align-self: center;
   margin-bottom:1%;
+  margin-top:2%;
 }
 
 .deletep:hover{
@@ -86,7 +86,6 @@ button:hover{
 /* navbar */
 #navbar {
   background-color:rgba(253, 253, 253, 0.87);
-  /* text-shadow: 1px 1px 2px rgb(255, 255, 255); */
   text-align:center;
   min-height:65px;
   
@@ -107,21 +106,16 @@ button:hover{
 /* topright brand */
 .navbar-brand {
   color:rgba(11, 10, 10, 0.637);
-  /* text-shadow:2px 2px 3px #fdff74; */
   font-size:3rem;
   font-weight:bold;
   font-family:'Noto Sans' !important;
-  /* -webkit-text-stroke-width: 1px; */
-  /* -webkit-text-stroke-color: #ffffff; */
   transition: all 0.3s ease;
 }
 .navbar-brand:hover{
   color:rgba(221, 221, 221, 0.637);
-  /* #fdff74; */
   text-shadow:2px 2px 3px #000000;
   text-decoration: solid underline #000000 2px !important;
   font-weight:bold;
-  /* font-family:'Sansita Swashed' !important; */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #000000;
 }
@@ -187,11 +181,10 @@ button:hover{
   font-size:3rem;
   justify-content:center;
   align-items: center;
-  /* text-shadow:5px 5px 10px #dee054; */
+  text-shadow:5px 5px 10px #dee054;
   margin-bottom:5%;
   margin-top:5%;
-  /* -webkit-text-stroke-width: 0.75px; */
-  /* -webkit-text-stroke-color: #000000; */
+
 }
 .contenttitle:hover{
   animation: flicker 1.25s linear 1;
@@ -249,6 +242,10 @@ button:hover{
   object-position:50% 5%;
   border-radius:50%;
   box-shadow: -3px -3px 7px #ffffff50, 3px 3px 5px rgba(0, 0, 0, 0.288);
+}
+
+.profdesc{
+  margin-top:20%;
 }
 
 /* profile page */
@@ -395,12 +392,20 @@ backdrop-filter: blur(6.5px);
   text-align:center;
   list-style:none;
   flex-direction: column;
-  background-color:#4195e4;
-  border-radius:10px;
-  min-width:50%;
+  background-color:#ffffff;
+  min-width:60%;
   box-shadow:5px 5px 10px rgb(0, 0, 0);
   margin-top:1%;
-  margin-bottom:30px;
+}
+
+.recipe .rimg{
+  align-self:center;
+  width: 200px;
+}
+
+.recipe .ings{
+  border-bottom:1px solid rgb(199, 210, 248);
+  
 }
 
 /* flicker animation for headings */
@@ -428,6 +433,15 @@ backdrop-filter: blur(6.5px);
   100% {rotate:630deg}
 }
 
-.editacc{
-  
+/* edit profile form page */
+.editform{
+ color:white; 
+}
+
+.editform li,p{
+  color:black;
+}
+
+.form-text{
+  color:black;
 }

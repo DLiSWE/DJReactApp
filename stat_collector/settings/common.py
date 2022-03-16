@@ -14,21 +14,12 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 AUTH_USER_MODEL = "Account.EndUser"
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-3-)cld-wsrdrd35#g&y1%7h-%(by6qdqxodz7=fxcgp_6!bhkd'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
 
 # Application definition
 INSTALLED_APPS = [
@@ -43,10 +34,12 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'thepantry',
     'django_extensions',
+    'whitenoise.runserver_nostatic'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

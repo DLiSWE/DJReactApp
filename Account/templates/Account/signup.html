@@ -4,9 +4,9 @@
 
 {% block pcontent %}
 <h1>Sign Up</h1>
-<form method="POST">
+<form method="POST" class="editform">
     {% csrf_token %}
     {% bootstrap_form form %}
-    <input type="submit" class="btn btn-primary" value="Sign Up">
+    <input type="submit" class="deletep" value="Sign Up">
 </form>   
 {% endblock %}

@@ -1,7 +1,3 @@
-
-console.log('connected')
-
-
 $('#test').click(function(){
     $('#test').text('Well jquery is working')
 })
@@ -44,12 +40,13 @@ async function getRecipe(Ingredients){
 function to_html(data,ingredient){
         let main = document.getElementById("recipe_for_ingredient");
         main.innerHTML = ' '
-        main.innerHTML = `<h3>${ingredient} Recipes:</h3>`
+        main.innerHTML += `<h3 class='ings'>${ingredient} Recipes:</h3>`       
         for (let i=0;i<data.length;i++){
-        main.innerHTML += `<h5>${data[i].title}: Missing Ingredients: </h5>`;
+        main.innerHTML += `<img class="rimg" src="${data[i].image}">`;
+        main.innerHTML +=`<h5 class='ings'>${data[i].title}: Missing Ingredients: </h5>`;
         let misslen = data[i].missedIngredients.length;
         for (let x=0;x<misslen;x++){
-            main.innerHTML += `<li>${data[i].missedIngredients[x].originalName}</li>`;
+            main.innerHTML += `<li class='ings'>${data[i].missedIngredients[x].originalName}</li>`;
         }
     }
 }
