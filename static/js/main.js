@@ -1,3 +1,5 @@
+import { APIKEY } from './apicreds.js'
+
 $('#test').click(function(){
     $('#test').text('Well jquery is working')
 })
@@ -19,7 +21,7 @@ function showHide(ingredients){
 
 
 async function getRecipe(Ingredients){
-    const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${Ingredients}&number=2&apiKey=4f67686c0fa74823907de359dd10cdfc`, {
+    const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${Ingredients}&number=2&apiKey=${APIKEY}`, {
        "method": "GET",
        "headers": {
            'Content-Type': 'application/json',
